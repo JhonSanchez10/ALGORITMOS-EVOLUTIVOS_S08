@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas 1U - Análisis Estadístico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo_universidad.png') }}" alt="Logo">
+        </div>
+        <h1>NOTAS 1U – Análisis Estadístico</h1>
+    </header>
+
+    <main>
+        <!-- Sección de Estadísticas al inicio -->
+        <div class="statistics-section">
+            <h2>Estadísticas Generales</h2>
+            <div class="statistics-cards">
+                <div class="stat-card">
+                    <h4>Nota Mínima</h4>
+                    <p>{{ stats['min'] }}</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Nota Máxima</h4>
+                    <p>{{ stats['max'] }}</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Promedio</h4>
+                    <p>{{ stats['mean'] }}</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Cuartil 1</h4>
+                    <p>{{ stats['q1'] }}</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Cuartil 3</h4>
+                    <p>{{ stats['q3'] }}</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Desviación Estándar</h4>
+                    <p>{{ stats['std_dev'] }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Opciones para seleccionar gráfico -->
+        <div class="options">
+            <h2>Selecciona el análisis que deseas ver:</h2>
+            <form action="/analysis" method="POST">
+                <button type="submit" name="analysis_type" value="histogram">Histograma de Notas</button>
+                <button type="submit" name="analysis_type" value="boxplot">Distribución de Notas por Tipo de Examen</button>
+                <button type="submit" name="analysis_type" value="mean">Promedio de Notas por Tipo de Examen</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

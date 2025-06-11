@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ analysis_type }} - Notas 1U</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo_universidad.png') }}" alt="Logo">
+        </div>
+        <h1>NOTAS 1U – {{ analysis_type }}</h1>
+    </header>
+
+    <main>
+        <div class="result">
+            <!-- Contenedor para el gráfico y la leyenda -->
+            <div class="graph-container">
+                <img src="data:image/png;base64,{{ img }}" alt="Gráfico de {{ analysis_type }}">
+            </div>
+
+            <!-- Leyenda o descripción adicional del gráfico -->
+            <div class="legend">
+                <h3>Descripción del Gráfico</h3>
+                <p>{{ interpretation }}</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <a href="/">Volver al inicio</a>
+    </footer>
+</body>
+</html>

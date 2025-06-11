@@ -1,0 +1,193 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #e60000;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+header .logo img {
+    height: 60px;
+    margin-left: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+    margin-right: 20px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Sección para mostrar el gráfico y la interpretación */
+.result {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.graph-container {
+    flex: 1;
+    max-width: 60%;
+    text-align: center;
+}
+
+.legend {
+    flex: 1;
+    max-width: 35%; /* Limita el tamaño de la leyenda */
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.legend h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.legend p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Section for displaying statistics in cards */
+.statistics-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.statistics-section h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.statistics-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Muestra las tarjetas en 3 columnas */
+    gap: 20px; /* Espacio entre tarjetas */
+    justify-items: center; /* Centra las tarjetas dentro de la grid */
+    margin-top: 30px;
+}
+
+.stat-card {
+    background-color: #fff; /* Fondo blanco para las tarjetas */
+    color: #333; /* Texto más oscuro para contraste */
+    padding: 20px;
+    width: 100%; /* Hacemos que ocupen el 100% de su celda */
+    max-width: 250px; /* Limita el tamaño máximo de cada tarjeta */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card h4 {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons (like before) */
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    display: inline-block;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Center the buttons */
+.options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .result {
+        flex-direction: column; /* Hacemos que el gráfico y la interpretación estén en una sola columna en pantallas pequeñas */
+        gap: 20px;
+    }
+
+    .graph-container {
+        max-width: 100%;
+    }
+
+    .legend {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .statistics-cards {
+        grid-template-columns: 1fr 1fr; /* 2 columnas en pantallas pequeñas */
+    }
+
+    .stat-card {
+        width: 90%;
+    }
+}
